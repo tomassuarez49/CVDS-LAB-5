@@ -1,0 +1,33 @@
+package com.CVDS.LAB5;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
+@Controller
+public class UserController {
+ 
+ @RequestMapping("/hello")
+ @ResponseBody
+ private String hello() {
+  return "Hello World";
+ }
+ 
+ @RequestMapping("/user/{id}")
+ @ResponseBody
+ private String getUser(@PathVariable Integer id) {
+  String uri = "https://jsonplaceholder.typicode.com/users/" + id;
+  RestTemplate restTemplate = new RestTemplate();
+  
+  User user = restTemplate.getForObject(uri, User.class);
+  System.out.println("User: " + user);
+  
+  System.out.println("id: " + user.getId());
+  System.out.println("User ID: " + user.getUserId());
+  System.out.println("Title: " + user.getTitle());
+  System.out.println("Completed " + user.getCompleted());
+  
+  return "User detail page.";
+ }
+}

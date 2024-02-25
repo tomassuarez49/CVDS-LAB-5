@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Adivinar Número</title>
+</head>
+<body>
+    <h1>Juego de Adivinar Número</h1>
+    <p>Adivina un número entre 1 y 10:</p>
+    <form action="/guess" method="post">
+        <label for="adivinar">Número:</label>
+        <input type="number" id="adivinar" name="numero" min="1" max="10" required>
+        <br>
+        <input type="submit" value="Adivinar">
+    </form>
+    <form action="/reset" method="post">
+        <input type="submit" value="Reiniciar Juego">
+    </form>
+    
+    <p>Premio Actual: $<span th:text="${premioActual}"></span></p> <!-- Muestra el premio actual -->
+    <p>Intentos: <span th:text="${intentos}"></span></p>
+    
+    <!-- Aquí puedes mostrar otros mensajes o resultados del juego -->
+</body>
+</html>

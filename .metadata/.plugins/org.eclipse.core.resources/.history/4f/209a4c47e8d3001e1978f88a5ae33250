@@ -1,0 +1,10 @@
+package com.CVDS.LAB5;
+
+public class GameController {
+	private int number;
+	
+	
+	public int calculate (int number) {
+		
+	}
+}
