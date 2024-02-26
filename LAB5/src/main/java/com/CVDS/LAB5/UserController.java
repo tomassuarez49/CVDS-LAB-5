@@ -2,6 +2,7 @@ package com.CVDS.LAB5;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,8 +39,18 @@ public class UserController {
          model.addAttribute("premio", premio); // Agregar el premio al modelo
          model.addAttribute("premioActual", game.getPremio()); // Agregar el premio actual al modelo
          model.addAttribute("intentos", game.getIntentos()); // Agregar el número de intentos al modelo
+         
      }
      return "guess";
+ }
+ 
+ @Controller
+ public class ResetController {
+
+     @GetMapping("/reset")
+     public String resetGame() {
+         return "/guess"; // Redirige al usuario de nuevo a la página de adivinanzas
+     }
  }
 
  
