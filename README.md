@@ -1,6 +1,13 @@
 # CVDS-LAB-5
+## Integrantes
+* **Nicolas Sebastian Achuri Macias**
+* **Sara Katherin Castillo Garcia**
+* **Tomas Suarez Piratova**
 
-### - Nicolas Achuri
-### - Sara Castillo
-### - Tomas Suarez
+## Respuestas
+
+### _Parte X_ 
+
+
+### _Parte X_ 
 
